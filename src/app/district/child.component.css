@@ -8,12 +8,7 @@
     border-top: 5px solid green;
     border-bottom: 5px solid green;
 } */
-input.ng-invalid.ng-touched{
-    border-left: 5px solid red;
-    border-right: 5px solid red;
-    border-top: 5px solid red;
-    border-bottom: 5px solid red;
-}
+
 /* input.ng-touched
 {
     border-left: 5px solid yellow;
