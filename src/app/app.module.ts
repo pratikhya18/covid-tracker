@@ -11,6 +11,8 @@ import { CountryComponent } from './country/country.component';
 import { NavComponent } from './nav/nav.component';
 import { RegistrationComponent } from './registration/registration.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { RegistrationComponent } from './registration/registration.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule, ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    
 
   ],
   providers: [],

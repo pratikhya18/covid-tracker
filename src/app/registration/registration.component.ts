@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import {LoginService} from '../../../service/login.service';
 
 
 @Component({
@@ -7,26 +9,62 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+ logInUser:any;
 
-  constructor() { }
+  constructor( public logInService :LoginService) { 
 
-  ngOnInit(): void {
+    this.logInService.getUserLogin().subscribe((data:any)=>{
+      const result = data;
+      for(let i=0;i<result.length;i++)
+      {
+        console.log("data"+result[i].usename);
+        console.log("data"+result[i].password);
+      }
+     
+      
+      //alert(data);
+      //this.logInUser = data;
+    })
   }
 
-  LoggedIn(data:any)
+  ngOnInit(): void {
+    
+  }
+
+  LoggedIn(UserLogin:NgForm)
   {
-console.log(data);
+//console.log(UserLogin:NgForm);
+console.log('buttonclick'+UserLogin.value.email);
+console.log('buttonclick'+UserLogin.value.password);
   }
 
   user: user = {
-      "email":"user123@gmail.com",
+      "email":"",
       "password":""
     };
+
+
+
+
+
+    addUser(UserLogin:any)
+    {
+//       console.log(UserLogin.value.email);
+// console.log(UserLogin.value.password);
+const formData = {email:UserLogin.value.email , password:UserLogin.value.password}
+this.logInService.postLogInDetails(formData).subscribe(data=>{
+  console.log("data"+typeof(data))
+})
+    }
 
 }
 export  interface user
 {
-  "email":'user123@gmail.com',
+  "email":'',
   "password":""
 }
+
+// function UserLogin(UserLogin: any, NgForm: typeof NgForm) {
+//   throw new Error('Function not implemented.');
+// }
 

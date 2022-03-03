@@ -12,13 +12,13 @@
                     <h4 class="mt-1 mb-5 pb-1">We are Covid Help Lines</h4>
                   </div>
   
-                  <form #UserLogin="ngForm" (ngSubmit)="LoggedIn(UserLogin.value)">
+                  <form #UserLogin="ngForm" (ngSubmit)="addUser(UserLogin)">
                     <!-- <form #userForm = "ngForm" (ngSubmit)="onSubmit(userForm)"> -->
                     <p>Please login to your account</p>
                      
                     <div class="form-group">
                     <div class="form-outline mb-4">
-                      <input name="email" email #email="ngModel" [ngModel]=user.email required type="email" class="form-control" placeholder="email address"/>
+                      <input name="email" email #email="ngModel" ngModel required type="email" class="form-control" placeholder="email address"/>
                       <label >Username</label>
                       <div><span class="text-danger" *ngIf="email.invalid && email.touched">email field is must required</span></div>
                       
@@ -27,7 +27,7 @@
                    
             <div class="form-group">         
                     <div class="form-outline mb-4">
-                      <input type="password" name="password" minlength="3" #password="ngModel"  required [ngModel]=user.password  class="form-control"  />
+                      <input type="password" name="password" minlength="3" #password="ngModel"  required ngModel  class="form-control"  />
                       <label >Password</label>
                       <div>
                           <!-- <span *ngIf="password.invalid && password.touched">8 characters must be there</span> -->
