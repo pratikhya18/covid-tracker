@@ -26,7 +26,7 @@ url ="http://localhost:3000/login/get_user_login"
       //console.log(data);
       // return data;
     });
-   console.log(response)
+   //console.log(response)
    return value; 
   }
 
