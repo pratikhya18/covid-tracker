@@ -20,7 +20,14 @@ url ="http://localhost:3000/login/get_user_login"
   {
     const headers = { 'content-type': 'application/json'}  
     const body=JSON.stringify(data);
-    return this.http.post('http://localhost:3000/login/post_user_login',body,{'headers':headers})
+    console.log(data)
+    const value= this.http.post('http://localhost:3000/login/post_user_login',body,{'headers':headers});
+    const response = value.subscribe(data => {
+      //console.log(data);
+      // return data;
+    });
+   console.log(response)
+   return value; 
   }
 
 
