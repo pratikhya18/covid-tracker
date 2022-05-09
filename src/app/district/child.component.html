@@ -1,4 +1,5 @@
-[1:31 AM, 2/20/2022] Riya: <app-nav></app-nav>   
+<!-- [1:31 AM, 2/20/2022] Riya: -->
+ <app-nav></app-nav>   
      <div class="content-wrapper">
       <section class="content-header">
         <div class="container-fluid">
@@ -23,11 +24,12 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="row">
+            <div class="row"  >
              
-                <div class="col-2">
-                  <label for="typeahead-basic" class="font-weight-normal">district name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-                <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
+                <div class="col-2"*ngFor = "let title of dataArray" >
+                    <label for="typeahead-basic" class="font-weight-normal" >Cities and capitals <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS\."></i></label>   
+                <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" [innerHTML]="title" >
+               
                 </div>
                 <div class="col-2">
                   <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
@@ -50,117 +52,8 @@
                 <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
                 </div>
             </div>
-            <div class="row">
-             
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">district  name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-              </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-              </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-              </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-              </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-              </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-              </div>
-          </div>
-          <div class="row">
-             
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">district name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-            </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-            </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-            </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-            </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-            </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-            </div>
-        </div>
-        <div class="row">
-             
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">district name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-          </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-          </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-          </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-          </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-          </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-          </div>
-      </div>
-      <div class="row">
-             
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">district name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-        </div>
-    </div>
-    <div class="row">
-             
-      <div class="col-2">
+
+      <!-- <div class="col-2">
         <label for="typeahead-basic" class="font-weight-normal">dictrict name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
       <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
       </div>
@@ -183,7 +76,7 @@
       <div class="col-2">
         <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
       <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-      </div>
+      </div> -->
   </div>
    <br/>  
               <!-- {{this.productForm.value | json}}   -->
@@ -199,7 +92,7 @@
         <!-- /.card -->
       </div>
     </div>
-  </div>
+  
 </section>
           </div>
         </div>
@@ -208,4 +101,9 @@
     
      
 <!-- /.content -->
+
+<div>
+
+  
+</div>
 

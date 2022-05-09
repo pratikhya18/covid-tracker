@@ -14,16 +14,74 @@
   
                   <form #UserLogin="ngForm" (ngSubmit)="addUser(UserLogin)">
                     <!-- <form #userForm = "ngForm" (ngSubmit)="onSubmit(userForm)"> -->
-                    <p>Please login to your account</p>
+                    <p>Please Create an account</p>
                      
                     <div class="form-group">
                     <div class="form-outline mb-4">
-                      <input name="email" email #email="ngModel" ngModel required type="email" class="form-control" placeholder="email address"/>
-                      <label >Username</label>
-                      <div><span class="text-danger" *ngIf="email.invalid && email.touched">email field is must required</span></div>
+                      <input name="Firstname" firstname #firstname="ngModel" ngModel required type="text" class="form-control" placeholder="Enter first Name"/>
+                      <label >First name</label>
+                      <div><span class="text-danger" *ngIf="firstname.invalid && firstname.touched">Firstname field is must required</span></div>
                       
                     </div>
                 </div>
+                <div class="form-group">
+                  <div class="form-outline mb-4">
+                    <input name="Lastname" Lastname #Lastname="ngModel" ngModel  type="text" class="form-control" placeholder="Enter Last Name"/>
+                    <label >Last Name*</label>
+                    <!-- <div><span class="text-danger" *ngIf="email.invalid && email.touched">email field is must required</span></div>
+                     -->
+                  </div>
+              </div>
+              <div class="form-group">
+                <div class="form-outline mb-4">
+                  <input name="Age" Age #Age="ngModel" ngModel  type="number" class="form-control" placeholder="Enter age"/>
+                  <label >Age</label>
+                  <!-- <div><span class="text-danger" *ngIf="email.invalid && email.touched">email field is must required</span></div> -->
+                  
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="form-outline mb-4">
+                <input name="country" country #country="ngModel" ngModel required type="text" class="form-control" placeholder="Enter country name"/>
+                <label >Enter Country Name</label>
+                <!-- <div><span class="text-danger" *ngIf="email.invalid && email.touched">email field is must required</span></div> -->
+                
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="form-outline mb-4">
+              <input name="Adress" Adress #Adress="ngModel" ngModel required type="text" class="form-control" placeholder="email address"/>
+              <label >Adress</label>
+              <!-- <div><span class="text-danger" *ngIf="email.invalid && email.touched">email field is must required</span></div> -->
+              
+            </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-outline mb-4">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="male" ngModel required >
+          <label class="form-check-label" for="exampleRadios1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="female" ngModel required>
+          <label class="form-check-label" for="exampleRadios2">
+            Female
+          </label>
+        </div>
+      </div>
+      </div>
+
+        <div class="form-group">
+          <div class="form-outline mb-4">
+            <input name="email" email #email="ngModel" ngModel required type="email" class="form-control" placeholder="email address"/>
+            <label >Email Adress</label>
+            <div><span class="text-danger" *ngIf="email.invalid && email.touched">email field is must required</span></div>
+            
+          </div>
+      </div>
                    
             <div class="form-group">         
                     <div class="form-outline mb-4">
@@ -39,8 +97,8 @@
                 </div>      
   
                     <div class="text-center pt-1 mb-5 pb-1">
-                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" >Log in</button>
-                      <a class="text-muted" href="#!">Forgot password?</a>
+                      <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" > Sign In</button>
+                      <a routerLink="/login">Already an user</a>
                     </div>
   
                     <!-- <div class="d-flex align-items-center justify-content-center pb-4">

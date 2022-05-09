@@ -1,4 +1,4 @@
-[1:32 AM, 2/20/2022] Riya: <app-nav></app-nav> 
+ <app-nav></app-nav> 
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -10,7 +10,7 @@
         <!-- Default box -->
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Time Tracker</h3>
+            <h3 class="card-title">State covid Tracker</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -21,174 +21,99 @@
               </button>
             </div>
           </div>
-          <div class="card-body">
+         
+          <div class="container">
             <div class="row">
-             
-                <div class="col-2">
-                  <label for="typeahead-basic" class="font-weight-normal">state name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-                <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
+              <div class="col-10">
+                <div class="row clearfix">
+                  <div class="col-md-12 column">
+                    <table class="table table-bordered table-hover" id="tab_logic" style="margin-left:-20%;">
+                      <thead>
+                        <tr>
+                          <th class="text-center">
+                            #
+                          </th>
+                          <th class="text-center">
+                            City-Name
+                          </th>
+                          <th class="text-center">
+                            Population
+                          </th>
+                          <th class="text-center">
+                            active
+                          </th>
+                          <th class="text-center">
+                            confirmed
+                          </th>
+                          <th class="text-center">
+                            deaceased
+                          </th>
+                          <th class="text-center">
+                            recoverd
+                          </th>
+                          <th class="text-center">
+                            vaccinated
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let val of StateData">
+                          <td></td>
+                          <td >
+                            <input type="text" [(ngModel)]="val.city_name"  placeholder='Enter city Name' class="form-control" disabled/>
+                            </td>
+                          <td>
+                            <input type="text" [(ngModel)]="val.population"  placeholder='Enter Full Name' class="form-control" disabled/>
+                            </td>
+                            <td>
+                              <input type="text" [(ngModel)]="val.active"  placeholder='Enter Full Name' class="form-control" disabled/>
+                              </td>
+                              <td>
+                                <input type="text" [(ngModel)]="val.confirmed"  placeholder='Enter Full Name' class="form-control" disabled/>
+                                </td>
+                          <td>
+                          <input type="text"  [(ngModel)]="val.deceased" placeholder='Enter Full Name' class="form-control" disabled/>
+                          </td>
+                          <td>
+                          <input type="email" [(ngModel)]="val.recovered" placeholder='Enter Mail' class="form-control" disabled/>
+                          </td>
+                          <td>
+                          <input type="number" [(ngModel)]="val.vaccinated" placeholder='Enter Mobile' class="form-control" disabled/>
+                          </td>
+                        </tr>
+                       
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-                <div class="col-2">
-                  <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-                <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
+              </div>
+              <div class="col">
+                <div class="dropdown">
+                  <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
+                    select Region
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" >Default</a>
+                    <a class="dropdown-item" >city</a>
+                    <button class="dropdown-item" (click)="getStates()">states</button>
+                  </div>
                 </div>
-                <div class="col-2">
-                  <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-                <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
+                <div class="dropdown">
+                  <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown">
+                    select Region
+                  </button>
+                  <div class="dropdown-menu" >
+                    <button class="dropdown-item" *ngFor="let item of statesArray" (click)="getSelectedState(item)" >{{item}}</button>
+                   
+                  </div>
                 </div>
-                <div class="col-2">
-                  <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-                <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-                </div>
-                <div class="col-2">
-                  <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-                <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-                </div>
-                <div class="col-2">
-                  <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-                <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-                </div>
-            </div>
-            <div class="row">
-             
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">state  name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
               </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-              </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-              </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-              </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-              </div>
-              <div class="col-2">
-                <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-              <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-              </div>
-          </div>
-          <div class="row">
-             
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">state name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
+            
             </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-            </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-            </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-            </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-            </div>
-            <div class="col-2">
-              <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-            <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-            </div>
-        </div>
-        <div class="row">
-             
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">state name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
           </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-          </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-          </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-          </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-          </div>
-          <div class="col-2">
-            <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-          <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-          </div>
-      </div>
-      <div class="row">
-             
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">state name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-        </div>
-        <div class="col-2">
-          <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-        <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-        </div>
-    </div>
-    <div class="row">
-             
-      <div class="col-2">
-        <label for="typeahead-basic" class="font-weight-normal">dictrict name <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-      <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-      </div>
-      <div class="col-2">
-        <label for="typeahead-basic" class="font-weight-normal">population <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-      <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-      </div>
-      <div class="col-2">
-        <label for="typeahead-basic" class="font-weight-normal">Confirmed case <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-      <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-      </div>
-      <div class="col-2">
-        <label for="typeahead-basic" class="font-weight-normal">deaths<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-      <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber" >
-      </div>
-      <div class="col-2">
-        <label for="typeahead-basic" class="font-weight-normal">recover <i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-      <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-      </div>
-      <div class="col-2">
-        <label for="typeahead-basic" class="font-weight-normal">vaccinated<i class="fas fa-info-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="This field is auto populated from mySGS."></i></label>
-      <input autoComplete="on" class="form-control" formControlName="EmployeeNameNumber">
-      </div>
-  </div>
-   <br/>  
-              <!-- {{this.productForm.value | json}}   -->
-             
-
-          </div>
+         
+       
+          
           <!-- /.card-body -->
           <!-- <div class="card-footer">
             Footer
