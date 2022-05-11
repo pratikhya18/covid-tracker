@@ -18,4 +18,10 @@
     -webkit-transition: width 1.5s ease-in-out;
     transition: width 1.5s ease-in-out;
   }
+
+  .progress{
+    box-shadow: none;
+    border-radius: 23px;
+    height: 29px;
+  }
   

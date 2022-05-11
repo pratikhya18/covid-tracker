@@ -51,13 +51,13 @@ export class DistrictDashboardComponent implements OnInit {
     {
 
       this. myChart =  new Chart('canvas3', {
-        type: "horizontalBar",
+        type: "pie",
         data: {
           labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
           datasets: [{
             label: 'My Dataset',
             backgroundColor: "rgb(23,44,60)",
-            borderColor: "rgb(255, 99, 132)",
+            borderColor: "#ffff",
             fill: true,
             data: [10, 12, 16, 25, 11, 7, 9]
           }]
