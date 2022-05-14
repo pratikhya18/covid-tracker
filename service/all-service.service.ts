@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {  HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +10,7 @@ export class AllServiceService {
   url = environment.baseurl+"/tables/getTable"
   url2 = environment.baseurl+"/login/get_user_login"
 url1 = environment.baseurl+"/login/post_user_login"
+graphUrl = environment.baseurl+"/Graph/getGraph"
 
   constructor(private http:HttpClient) { }
   get_list()
@@ -32,6 +34,7 @@ console.log("---->"+JSON.stringify(data));
   return this.http.post(environment.baseurl+"/Users/create",data);
 
 
+}
 //   const headers = { 'content-type': 'application/json','Access-Control-Allow-Origin': '*'}  
 //   const body=JSON.stringify(data);
 //   console.log(data);
@@ -42,7 +45,12 @@ console.log("---->"+JSON.stringify(data));
 //   // });
 //  //console.log(response)
 //  return value; 
+
+
+getGraph(){
+  return this.http.get(this.graphUrl);
 }
+
 }
 
 

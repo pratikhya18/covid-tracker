@@ -56,7 +56,7 @@ export class ChildComponent implements OnInit {
   ngOnInit(): void {
     //  this.getStates()
     this.listApi.get_list().subscribe((data: any) => {
-      const result = data;
+     
       this.DataArray = data;
       console.log(data[0].state[0].City.length);
 
