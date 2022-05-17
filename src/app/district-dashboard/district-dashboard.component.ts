@@ -26,7 +26,7 @@ export class DistrictDashboardComponent implements OnInit {
   private NewDetails = (source: any): MonthsModel => {
     this.sourceData = source 
     this.result = new MonthsModel();
-    console.log('source'+this.sourceData);
+    console.log('source'+this.sourceData.January);
     Object.keys(source).map((key) => {
       
       
@@ -49,54 +49,56 @@ export class DistrictDashboardComponent implements OnInit {
     this.allservice.getGraph().subscribe((data: any) => {
       const result = data;
       this.dataArray = result;
-      for (let i = 0; i < this.dataArray[0].Root[0].Countries.length; i++) 
+      // console.log(JSON.stringify(this.dataArray));
+      
+      for (let i = 0; i < this.dataArray[0].Countries.length; i++) 
       {
-        for(let continets=0;continets<this.dataArray[0].Root[0].Countries[i].continents.length;continets++){
-        let continetsdata = ['Asia','Africa','North America','South America','Antarctica','Europe','Australia']
-        if (this.dataArray[0].Root[0].Countries[i].continents == continetsdata[continets]) 
+        //console.log(this.dataArray[0].Countries[i]);
+        
+        if(this.dataArray[0].Countries[i].continents_Name == 'Asia')
         {
-          for (let j = 0; j < this.dataArray[0].Root[0].Countries[i].coviddata.Years.length; j++) {
-            this.years = this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].year;
-            // console.log(this.years);
-          
-              if (this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].year == '2020')
-               {
-                for (let mon = 0; mon < this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months.length; mon++) {
-                  //console.log(this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months[mon]);
-                  // //Countries[0].coviddata.Years[0].months
-                  this.twenty.push(this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months[mon])
-                 
-                }
-              }
-              // if (this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].year == '2021') {
-              //   for (let mon = 0; mon < this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months.length; mon++) {
-              //     console.log(this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months[mon]);
-              //     // let monthsmodel: MonthsModel = this.NewDetails(this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months[mon]);
-              //     // //Countries[0].coviddata.Years[0].months
-              //     console.log('2021'+this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months[mon]);
-                  
-                  
-              //   }
-              // }
-              // if (this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].year == '2022') {
-              //   for (let mon = 0; mon < this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months.length; mon++) {
-              //     console.log(this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months[mon]);
-              //     // let monthsmodel: MonthsModel = this.NewDetails(this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months[mon]);
-              //     // //Countries[0].coviddata.Years[0].months
-              //     console.log('2022'+this.dataArray[0].Root[0].Countries[i].coviddata.Years[j].months[mon]);
-                  
-              //   }
-              // }
-           
+          for(let j=0;j<this.dataArray[0].Countries[i].Years.length;j++)
+          {
+             console.log("years"+JSON.stringify(this.dataArray[0].Countries[i].Years[j]));
+            
+            for(let k=0;k<this.dataArray[0].Countries[i].Years[j].months.length;k++)
+            {
+              console.log('monthsssss'+JSON.stringify(this.dataArray[0].Countries[i].Years[j].months[k])); 
+              this.monthsData.push(this.dataArray[0].Countries[i].Years[j].months[k])
+            } 
           }
         }
+
+        if(this.dataArray[0].Countries[i].continents_Name == 'Asia')
+        {
+          for(let j=0;j<this.dataArray[0].Countries[i].Years.length;j++)
+          {
+             console.log("years"+JSON.stringify(this.dataArray[0].Countries[i].Years[j]));
+            
+            for(let k=0;k<this.dataArray[0].Countries[i].Years[j].months.length;k++)
+            {
+              console.log('monthsssss'+JSON.stringify(this.dataArray[0].Countries[i].Years[j].months[k])); 
+              this.monthsData.push(this.dataArray[0].Countries[i].Years[j].months[k])
+            } 
+          }
+        }
+        // console.log("countries"+JSON.stringify(this.dataArray[0].Countries[i]));
+        // console.log(this.dataArray[0].countries[i].Years.length); 
       }
-      }
-      console.log('2020'+JSON.stringify(this.twenty)); 
-      let monthsmodel: MonthsModel = this.NewDetails(JSON.stringify(this.twenty));
-      console.log(monthsmodel);
+      let monthsmodel: MonthsModel = this.NewDetails(this.monthsData);
+       console.log(monthsmodel);
+      //console.log(this.monthsData);
+            
+      // console.log("--->"+this.twenty);
+              
+      // console.log('2020'+JSON.stringify(this.twenty)); 
+      // 
       
     });
+
+
+    
+
 
     {
 
@@ -139,7 +141,7 @@ export class DistrictDashboardComponent implements OnInit {
             backgroundColor: "rgb(23,44,60)",
             borderColor: "#ffff",
             fill: true,
-            data: this.monthsData
+            data: [34,89,12,37,24,67,12]
           }]
         },
         options: {
@@ -243,5 +245,18 @@ export class DistrictDashboardComponent implements OnInit {
       },
     });
   }
+
+
+
+  getYear(event:any)
+    {
+      console.log(event.target.value);
+      
+    }
+    getMonth(event:any)
+    {
+      console.log(event.target.value);
+      
+    }
 
 }

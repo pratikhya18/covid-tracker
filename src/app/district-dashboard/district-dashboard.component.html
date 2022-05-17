@@ -52,9 +52,39 @@
         </div>
       </div>
 </div>
-<div class="row">    
+
+
+<div class="row">  
+
+ 
+    
+  
+
   <div class="col-6 mt-2">
     <div class="card mt-2" style="height: 438px; width: 96%">
+      <select (click)="getYear($event)">
+        <option >year</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2020">2022</option>
+      </select>
+
+      <select  (click)="getMonth($event)">
+        <option >Months</option>
+        <option value="Jan" >Jan</option>
+        <option value="Feb">Feb</option>
+        <option value="March">March</option>
+        <option value="Apr">Apr</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="Jul">Jul</option>
+        <option value="Aug">Aug</option>
+        <option value="Sep">Sep</option>
+        <option value="Oct">Oct</option>
+        <option value="Nov">Nov</option>
+        <option value="Dec">Dec</option>
+      </select>
+      
       <!-- <div class="card-header">
           <h3 class="text-left">Usage History</h3>
         </div> -->

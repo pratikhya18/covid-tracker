@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AllServiceService } from '../../../service/all-service.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AllServiceService } from '../../../service/all-service.service';
 export class RegistrationComponent implements OnInit {
   logInUser: any;
 
-  constructor(public AllServiceService: AllServiceService) {
+  constructor(public AllServiceService: AllServiceService, private router:Router) {
     // this.logInService.getUserLogin().subscribe((data: any) => {
     //   const result = data;
     //   for (let i = 0; i < result.length; i++) {
@@ -57,6 +58,7 @@ export class RegistrationComponent implements OnInit {
     // });
    this.AllServiceService.postLogInDetails(formData).subscribe((data) => {
     console.log(data);
+    this.router.navigateByUrl('/login')
     });
   }
 }
